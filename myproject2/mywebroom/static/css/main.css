@@ -1,0 +1,388 @@
+body {
+    font-family: "Sarabun", sans-serif;
+    margin: 0 auto;
+    padding: 0 auto;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    /* background-image: url('/static/images/bg6.jpg'); */
+     background-size: cover;
+    background-position: center; 
+  }
+/* .............................dropdown.................................. */
+.dropbtn {
+  background-color: #ffffff00;
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #08080800;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e4100;
+  color: orange;
+}
+
+.logo img{
+    width: 100px;
+}
+.logo{
+    text-align: center;
+    background-color: #0056b3;
+}
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+.section-1{
+  margin-left:15%;
+  padding:1px 16px;
+  height:1100px;
+}
+
+li{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-top: 2px solid #000 ;
+}
+
+li a {
+  
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #55555500;
+  color: orange;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+* {
+  outline: none;
+}
+/* ............................. เป็นของหน้า Home กับ index ......................................... */
+.container{
+  max-width: 1600px;
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: 70px 300px 500px;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: 
+  'header header2'
+  'main aside' */
+  /* 'footer footer'; */
+  /* align-items: center; */
+}
+/* ------------------- home -------------------- */
+.container-home{
+  max-width: 1600px;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+.item-home{
+  height: 50px;
+  margin: 10px;
+  background-color: #120173;
+  text-align: center;
+  border-radius: 5px;
+}
+.item-home h1{
+  font-size: 20px;
+  color: #fff;
+}
+/* ------------------- home -------------------- */
+.item-1{
+  height: 50px;
+  margin: 10px;
+  /* grid-area: header; */
+  background-color: rgb(74, 131, 255);
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+.item-1 h1{
+  font-size: 20px;
+  color: #fff;
+}
+
+.item-2{
+  height: 50px;
+  margin: 10px;
+  /* grid-area: header2; */
+  background-color: #120173;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+.item-2 h1{
+  font-size: 20px;
+  color: #fff;
+}
+
+.item-3{
+  margin: 10px;
+  margin-top: 50px;
+  /* grid-area: main; */
+  background-color: #F0F8FF;
+  max-width: 800px;
+  /* text-align: center; */
+  border-radius: 5px;
+  height: 400px;
+  box-shadow: 0px 0px 0px 2px #410075;
+}
+
+.item-4{
+  margin: 10px;
+  /* grid-area: aside; */
+  background-color: #E6E6FA;
+  display: grid;
+  grid-template-columns:3fr 3fr 3fr;
+  text-align: center;
+  height: 1000px;
+  /* border: 3px solid #191970; */
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.item-4-search{
+  margin: 10px;
+  background-color: #E6E6FA;
+  display: grid;
+  grid-template-columns:3fr 3fr 3fr;
+  text-align: center;
+  height: 500px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.item-4-room{
+  margin: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 3px 1px #7a7a7a;
+  border-radius: 10px;
+}
+.item-4-room a{
+  color: #fff;
+  font-size: 15px;
+}
+.item-4-room h2{
+  font-size: 20px;
+}
+.item-4-room p{
+  font-size: 15px;
+}
+.item-4-room img{
+  margin: 20px;
+  width: 300px;
+  height: 200px;
+  border: 3px solid #008B8B;
+  border-radius: 5%;
+}
+/* ----------------ปุ่ม Book Room เลือกวันเวลา------------------------ */
+.container-form {
+  max-width: 400px;
+  /* margin: 50px auto; */
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="date"],
+input[type="time"],
+button {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#confirmation {
+  margin-top: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+}
+
+/* ....................... secrch ........................*/
+#searchInput {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+/* สไตล์ของปุ่มค้นหา */
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+/* ............................................................... */
+.footer {
+  background-color: #211757;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-left:15%;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ------------------------------- room เพื่อกรอกแบบฟอร์ม --------------------------------- */
+
+.containerone{
+  max-width: 1600px;
+  padding: 20px;
+  margin: 20px;
+  margin-top: 60px;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #000;
+}
+
+/* .containerone h1{
+  font-size: 30px;
+  text-align: center;
+  background-color: #FFEBCD;
+  padding: 10px;
+} */
+
+.item-span1{
+  max-width: 20%;
+  padding: 2px;
+}
+.item-span2{
+  margin-left: 50px;
+  /* padding-top: 50px; */
+}
+
+.item-span2 p{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.item-span0 h1{
+  font-size: 30px;
+  padding: 15px;
+}
+
+.item-span0{
+  text-align: center;
+  /* max-width: 1600px; */
+  border: 1px solid #ff0000;
+  background-color: #FFEBCD;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.item-span1 img{
+  max-width: 100%;
+  border: 3px solid #008B8B;
+  border-radius: 5%;
+}
+
+.flex-con-item0{
+  display: flex;
+  border-radius: 30px;
+  justify-content: center;
+}
+
+.flex-con-item1{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+/* ------------------------- roomlist รายการที่ทำการจองห้องเรียนอยู่  ---------------------------------------- */
+.item-roomlist{
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  background-color: #0a0068;
+  border-radius: 60px;
+  padding: 10px;
+  margin: 10px;
+}
+.item-roomlist h2{
+  color: #ffffff;
+  font-size: 25px;
+}

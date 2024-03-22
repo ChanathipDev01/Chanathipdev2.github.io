@@ -1,0 +1,81 @@
+body {
+    font-family: "Sarabun", sans-serif;
+    background-color: #f1f1f1;
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+}
+
+.login-container {
+    /* display: flex; */
+    max-width: 600px;
+    height: auto;
+    margin: 100px auto;
+    background-color: #005eeb15;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* justify-content: center ; */
+    /* align-content: space-around; */
+    /* flex-wrap: wrap; */
+}
+
+.item-form{
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.logout-message{
+    color: rgb(255, 255, 255); 
+    margin-bottom: 10px; 
+    text-align: center; 
+    background-color: rgb(255, 8, 0); 
+    padding: 10px; border: 2px solid; 
+    border-radius: 20px; 
+    font-size: 20px;
+}
+
+.logout-message1{
+    background-color: rgb(255, 255, 255);
+}
+.logout-message1 a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0); 
+    justify-content: flex-end;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

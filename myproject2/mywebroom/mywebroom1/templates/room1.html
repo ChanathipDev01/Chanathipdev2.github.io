@@ -1,0 +1,65 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จองห้องเรียน</title>
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <ul class="menu">
+        <div class="logo">
+          <img src="{% static '/images/user.png' %}" alt="">
+        </div>
+        <li><i class="bi bi-house-add-fill" style="font-size: 40px;"></i><a href="/main">จองห้องเรียน</a></li>
+    <li><i class="bi bi-book-half" style="font-size: 40px;"></i><a href="/roomlist">รายการจองห้องเรียน</a></li>
+    <li><i class="bi bi-box-arrow-left" style="font-size: 40px;"></i><a href="/logout">ออกสู่ระบบ</a></li>
+    </ul>
+    <div class="section-1">
+        <div class="containerone">
+          <div class="flex-con-item0">
+            <div class="item-span0">
+              <h1><i class="bi bi-bookmark-plus-fill" style="color: rgb(255, 0, 0);"></i> จองห้องเรียนตึกวิศวะ ชั้น1 ท.137 <i class="bi bi-bookmark-plus-fill"style="color: rgb(255, 0, 0);" ></i></h1>
+            </div>
+          </div>
+            <div class="flex-con-item1">
+                <div class="item-span1">
+                    <img src="{% static '/images/room1.jpg' %}" alt="">
+                </div>
+                <div class="item-span2">
+                    <p>สถานที่ตั้ง : มหาวิทยาลัยศิลปากร นครปฐม</p>
+                    <p>จำนวนที่นั่ง : 50</p>
+                    <p>วันที่ใช้ห้อง : {{ all_booking.last.startDate }} จนถึงวันที่ : {{ all_booking.last.endDate }}</p>
+                    <p>เวลาที่ใช้ห้อง : {{ all_booking.last.startTime }} จนถึงเวลา : {{ all_booking.last.endTime }}</p>
+                </div>
+            </div>
+<!-- ---------------------------------------flex-con-item2เอาไว้เก็บข้อมูลผู้จอง------------------------------------------ -->
+            <div class="flex-con-item2">
+              <form method="post" action="form_room1">
+                {% csrf_token %}
+                <div class="form-group m-4">
+                  <label for="name">ชื่อผู้จอง : </label>
+                  <input type="text" name="name" class="form-control">
+                </div>
+
+                <div class="form-group m-4">
+                  <label for="Email">Email : </label>
+                  <input type="text" name="Email" class="form-control">
+                </div>
+
+                <div class="form-group m-4">
+                  <label for="Email">รายละเอียดการใช้ห้อง : </label>
+                  <input type="text" name="detail" class="form-control">
+                </div>
+                <input type="submit" value="บันทึกข้อมูล" class="btn btn-success m-4">
+              </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static '/js/script.js' %}"></script>
+</body>
+</html>

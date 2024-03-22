@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT SU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+</head>
+<body>
+  {% load static %}
+  <ul class="menu">
+    <div class="logo">
+      <img src="{% static '/images/user.png' %}" alt="">
+    </div>
+    <li><i class="bi bi-house-add-fill" style="font-size: 40px;"></i><a href="/main">จองห้องเรียน</a></li>
+    <li><i class="bi bi-book-half" style="font-size: 40px;"></i><a href="/roomlist">รายการจองห้องเรียน</a></li>
+    <!-- <li><i class="bi bi-calendar-week-fill" style="font-size: 40px;"></i><a href="#contact">ปฏิทินการใช้ห้องเรียน</a></li> -->
+    <!-- <li><i class="bi bi-door-open-fill" style="font-size: 40px;"></i>
+      <div class="dropdown">
+        <button class="dropbtn">เข้าสู่ระบบ</button>
+        <div class="dropdown-content">
+        <a href="#">สำหรับผู้ดูแลระบบ</a>
+        <a href="#">สำหรับ User ทั่วไป</a>
+        <a href="#">Link 3</a>
+        </div>
+      </div>
+    </li> -->
+    <li><i class="bi bi-box-arrow-left" style="font-size: 40px;"></i><a href="/logout">ออกสู่ระบบ</a></li>
+  </ul>
+<div class="section-1">
+  <div class="container">
+    <div class="item-1">
+      <h1>
+          ค้นหาห้องเรียนที่ว่าง
+      </h1>
+      <!-- <input type="text" name="room_number" placeholder="Enter room number"> -->
+      <button type="submit" class="btn btn-danger" style="margin-top: 10px;"><a href="search" class="text-decoration-none" style="color: aliceblue;">Search</a></button>
+      <!-- <input type="text" id="searchInput" placeholder="ค้นหาห้อง">
+      <button class="button" onclick="searchRoom()">ค้นหา</button> -->
+    </div>
+
+    <div class="item-2">
+        <h1>เลือกห้องเรียนที่ต้องการจอง</h1>
+    </div>
+
+    <div class="item-3">
+        <div class="container-form">
+          <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="startDate">จากวันที่ :</label>
+              <input type="date" id="startDate" name="startDate" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="startTime">เริ่มตั้งแต่เวลา :</label>
+              <input type="time" id="startTime" name="startTime" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="endDate">ถึงวันที่ :</label>
+              <input type="date" id="endDate" name="endDate" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="endTime">จนถึงเวลา :</label>
+              <input type="time" id="endTime" name="endTime" class="form-control">
+            </div>
+
+            <input type="submit" value="บันทึกวันและเวลา" class="btn btn-success m-4">
+          </form>
+          {% if messages %}
+              {% for messages in messages %}
+              <div class="alert alert-success mt-4" role="alert">
+                เลือกวันที่ {{ all_booking.last.startDate }} เวลา {{ all_booking.last.startTime }}  <br>
+                จนถึงวันที่ {{ all_booking.last.endDate }} เวลา {{ all_booking.last.endTime }} <br>
+                <!-- {{messages}} -->
+              </div>
+              {% endfor %}
+          {% endif %}
+            <!-- <div id="confirmation"></div> -->
+        </div>
+    </div>
+
+    {% include 'chooseroom.html' %}
+
+    </div>
+  </div>
+  <div class="footer">
+    <p>Copyright © 2024 Your Company. All rights reserved.</p>
+  </div>  
+  <script src="{% static '/js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Site</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+</head>
+
+<body>
+  <ul class="menu">
+    <div class="logo">
+      <img src="{% static '/images/user.png' %}" alt="">
+    </div>
+    <li><i class="bi bi-house-add-fill" style="font-size: 40px;"></i><a href="/main">Booking Site</a></li>
+    <li><i class="bi bi-book-half" style="font-size: 40px;"></i><a href="/roomlist">Booking Status</a></li>
+    <li><i class="bi bi-box-arrow-left" style="font-size: 40px;"></i><a href="/logout">Log Out</a></li>
+  </ul>
+  <div class="section-1">
+    <div class="containerone">
+      <div class="flex-con-item0">
+        <div class="item-span0">
+          <h1><i class="bi bi-bookmark-plus-fill" style="color: rgb(255, 0, 0);"></i> ท.140-1
+            <i class="bi bi-bookmark-plus-fill" style="color: rgb(255, 0, 0);"></i>
+          </h1>
+        </div>
+      </div>
+      <div class="flex-con-item1">
+        <div class="item-span1">
+          <img src="{% static '/images/room2.jpg' %}" alt="">
+        </div>
+        <div class="item-span2">
+          <p>Location:Faculty of Engineering and Industrial Technology, Sanam Chandra Palace Campus</p>
+          <p>Seat: 50</p>
+          <p>From date: {{ all_booking.last.startDate }} to {{ all_booking.last.endDate }}</p>
+          <p>Start at: {{ all_booking.last.startTime }} to {{ all_booking.last.endTime }}</p>
+        </div>
+      </div>
+      <!-- ---------------------------------------flex-con-item2เอาไว้เก็บข้อมูลผู้จอง------------------------------------------ -->
+      <div class="flex-con-item2">
+        <form method="post" action="form_room1">
+          {% csrf_token %}
+          <div class="form-group m-4">
+            <label for="name">Name: </label>
+            <input type="text" name="name" class="form-control">
+          </div>
+
+          <div class="form-group m-4">
+            <label for="Email">Email: </label>
+            <input type="text" name="Email" class="form-control">
+          </div>
+
+          <div class="form-group m-4">
+            <label for="Email">Description: </label>
+            <input type="text" name="detail" class="form-control">
+          </div>
+          <input type="submit" value="Save" class="btn btn-success m-4">
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="{% static '/js/script.js' %}"></script>
+</body>
+
+</html>
